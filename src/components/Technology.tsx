@@ -34,10 +34,25 @@ const Technology = ({
       <div className="flex flex-col gap-1.5 pb-4">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex size-10 items-center justify-center">
-              <img src={technology.icon} alt="React" className="size-7" />
+            <div
+              className={`flex size-10 items-center justify-center rounded-lg md:hidden ${getBadgeColor(technology.badge)}`}
+            >
+              <img
+                src={technology.icon}
+                alt={technology.name}
+                className="size-6 md:size-7"
+              />
             </div>
-            <h3 className="text-text-primary pt-1.5 text-lg font-bold md:hidden">
+            <div
+              className={`hidden size-10 items-center justify-center rounded-lg md:flex`}
+            >
+              <img
+                src={technology.icon}
+                alt={technology.name}
+                className="size-7"
+              />
+            </div>
+            <h3 className="text-text-primary text-lg font-bold md:hidden">
               {technology.name}
             </h3>
           </div>
