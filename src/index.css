@@ -3,8 +3,32 @@
 @import "tailwindcss";
 
 @theme {
-  /* Make is default font */
+  /* Make it default font */
   --font-sans: "Plus Jakarta Sans", sans-serif;
 
   --font-inter: "Inter", sans-serif;
+
+  /* =============== COLORS ================= */
+  /* Brand */
+  --color-primary: #db2777;
+  --color-primary-dark: #d91b7e;
+  --color-secondary: #0a0f1d;
+
+  /* Text */
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-text-muted: #94a3b8;
+
+  /* Border / Stroke */
+  --color-border-primary: #f1f5f9;
+  --color-border-secondary: #e5e7eb;
+
+  /* Gradients */
+  --color-gradient-text-from: #ff5722;
+  --color-gradient-text-via: #d81b7e;
+  --color-gradient-text-to: #7c3aed;
+
+  --color-gradient-button-from: #f97316;
+  --color-gradient-button-to: #ec4899;
 }
