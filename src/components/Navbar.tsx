@@ -1,7 +1,48 @@
 import { IoMenu } from "react-icons/io5";
 import LogoImage from "../assets/images/logo-text.png";
+import { useState } from "react";
+
+type NavType = "home" | "technologies" | "projects" | "about" | "contact";
+
+interface NavLink {
+  id: NavType;
+  href: string;
+  label: string;
+}
+
+const navLinks: NavLink[] = [
+  {
+    id: "home",
+    href: "#home",
+    label: "Home",
+  },
+  {
+    id: "technologies",
+    href: "#technologies",
+    label: "Technologies",
+  },
+  {
+    id: "projects",
+    href: "#projects",
+    label: "Projects",
+  },
+  {
+    id: "about",
+    href: "#about",
+    label: "About",
+  },
+  {
+    id: "contact",
+    href: "#contact",
+    label: "Contact",
+  },
+];
 
 const Navbar = () => {
+  const currentHash = (location.hash.slice(1) || "home") as NavType;
+
+  const [activeNav, setActiveNav] = useState<NavType>(currentHash);
+
   return (
     <nav className="border-border-primary sticky top-0 z-50 border-b bg-white">
       <div className="container mx-auto flex h-12 items-center justify-between px-5 md:h-20">
@@ -14,46 +55,17 @@ const Navbar = () => {
         />
 
         <ul className="hidden items-center gap-7 md:flex">
-          <li>
-            <a
-              href="#home"
-              className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#technologies"
-              className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
-            >
-              Technologies
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
-            >
-              Contact
-            </a>
-          </li>
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={link.href}
+                onClick={() => setActiveNav(link.id)}
+                className={`${activeNav === link.id ? "text-primary" : "text-text-secondary"} hover:text-primary text-sm font-medium transition-colors`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <div className="flex items-center gap-4 md:gap-5">

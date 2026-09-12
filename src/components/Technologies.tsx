@@ -1,6 +1,6 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import type { ITechnology } from "../interfaces/ITechnology";
-import SelectedStack from "./SelectedStack";
+import SelectedStacks from "./SelectedStacks";
 import AllStacks from "./AllStacks";
 
 const getTechnologies = async (): Promise<ITechnology[]> => {
@@ -12,6 +12,8 @@ const getTechnologies = async (): Promise<ITechnology[]> => {
 const technologiesPromise = getTechnologies();
 
 const Technologies = () => {
+  const [selectedStacks, setSelectedStacks] = useState<ITechnology[]>([]);
+
   return (
     <section id="technologies" className="container mx-auto mb-15 px-4">
       <div className="flex flex-col gap-1 text-center md:gap-2 md:text-left">
@@ -34,10 +36,17 @@ const Technologies = () => {
             </h2>
           }
         >
-          <AllStacks technologiesPromise={technologiesPromise} />
+          <AllStacks
+            technologiesPromise={technologiesPromise}
+            selectedStacks={selectedStacks}
+            setSelectedStacks={setSelectedStacks}
+          />
         </Suspense>
 
-        <SelectedStack />
+        <SelectedStacks
+          selectedStacks={selectedStacks}
+          setSelectedStacks={setSelectedStacks}
+        />
       </div>
     </section>
   );
