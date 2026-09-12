@@ -1,4 +1,5 @@
 import LogoImage from "../assets/images/logo-text.png";
+import FooterLinks from "./FooterLinks";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
             <img
               src={LogoImage}
               alt="Logo"
-              className="mx-auto h-8 w-fit md:mx-0 md:h-6"
+              className="mx-auto h-8 w-fit md:mx-0 md:h-7"
             />
 
             <p className="text-text-tertiary mx-auto max-w-[384px] text-xs leading-[19.5px] md:mx-0">
@@ -45,87 +46,29 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="hidden space-y-4 md:block">
-            <h4 className="text-text-primary text-xs font-bold">PRODUCT</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <a
-                  href="#home"
-                  className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#technologies"
-                  className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
-                >
-                  Technologies
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
-                >
-                  Projects
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="hidden space-y-4 md:block">
-            <h4 className="text-text-primary text-xs font-bold">COMPANY</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <a
-                  href="#"
-                  className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
-                >
-                  Careers
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="hidden space-y-4 md:block">
-            <h4 className="text-text-primary text-xs font-bold">LEGAL</h4>
-            <ul className="space-y-2.5">
-              <li>
-                <a
-                  href="#"
-                  className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
-                >
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </div>
+          <FooterLinks
+            title="Product"
+            links={[
+              { href: "#home", label: "Home" },
+              { href: "#technologies", label: "Technologies" },
+              { href: "#projects", label: "Projects" },
+            ]}
+          />
+          <FooterLinks
+            title="Company"
+            links={[
+              { href: "#about", label: "About" },
+              { href: "#contact", label: "Contact" },
+              { href: "#careers", label: "Careers" },
+            ]}
+          />
+          <FooterLinks
+            title="Legal"
+            links={[
+              { href: "#privacy-policy", label: "Privacy Policy" },
+              { href: "#term-fo-service", label: "Terms of Service" },
+            ]}
+          />
         </div>
 
         <div className="border-t-border-primary mt-4 flex items-center justify-between border-t pt-4 md:mt-14 md:pt-8">
@@ -133,24 +76,21 @@ const Footer = () => {
             © 2026 Dev Stack. All rights reserved.
           </p>
 
-          <ul className="flex items-center gap-6">
-            <li>
-              <a
-                href="#"
-                className="text-text-muted hover:text-text-primary text-xs transition-colors"
-              >
-                Privacy
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="text-text-muted hover:text-text-primary text-xs transition-colors"
-              >
-                Terms
-              </a>
-            </li>
-          </ul>
+          <div className="flex items-center gap-6">
+            <a
+              href="#"
+              className="text-text-muted hover:text-text-primary text-xs transition-colors"
+            >
+              Privacy
+            </a>
+
+            <a
+              href="#"
+              className="text-text-muted hover:text-text-primary text-xs transition-colors"
+            >
+              Terms
+            </a>
+          </div>
         </div>
       </div>
     </footer>

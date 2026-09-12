@@ -19,7 +19,7 @@ const Technology = ({
 
   const handleSelectTechnology = () => {
     if (isSelected) {
-      toast.error(`${technology.name} is already selected in your stack`);
+      toast.warn(`${technology.name} is already selected in your stack`);
       return;
     }
 
