@@ -7,7 +7,11 @@ const Navbar = () => {
       <div className="container mx-auto flex h-12 items-center justify-between md:h-20">
         <IoMenu className="text-text-secondary cursor-pointer text-2xl md:hidden" />
 
-        <img src={LogoImage} alt="Logo" className="h-6 md:h-auto" />
+        <img
+          src={LogoImage}
+          alt="Logo"
+          className="h-6 cursor-pointer md:h-auto"
+        />
 
         <ul className="hidden items-center gap-7 md:flex">
           <li>

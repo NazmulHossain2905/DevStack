@@ -3,7 +3,7 @@ import ReactIcon from "../assets/icons/react.svg";
 
 const Technology = () => {
   return (
-    <div className="border-border-primary rounded-2xl border bg-white p-4 md:p-5">
+    <div className="border-border-primary rounded-2xl border bg-white p-4 shadow-[0_2px_10px_-3px_#00000010] md:p-5">
       <div className="flex flex-col gap-1.5 pb-4">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
