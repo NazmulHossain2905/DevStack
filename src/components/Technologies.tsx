@@ -1,9 +1,19 @@
+import { Suspense } from "react";
+import type { ITechnology } from "../interfaces/ITechnology";
 import SelectedStack from "./SelectedStack";
-import Technology from "./Technology";
+import AllStacks from "./AllStacks";
+
+const getTechnologies = async (): Promise<ITechnology[]> => {
+  const response = await fetch("/technologies.json");
+  const data = await response.json();
+  return data;
+};
+
+const technologiesPromise = getTechnologies();
 
 const Technologies = () => {
   return (
-    <section className="container mx-auto mb-15 px-4 md:px-0">
+    <section id="technologies" className="container mx-auto mb-15 px-4">
       <div className="flex flex-col gap-1 text-center md:gap-2 md:text-left">
         <h2 className="font-inter text-2xl leading-10 font-bold tracking-[-0.9px] md:text-4xl md:font-extrabold">
           Explore the{" "}
@@ -16,22 +26,16 @@ const Technologies = () => {
         </p>
       </div>
 
-      <div className="mt-5 flex flex-col items-start gap-8 md:mt-10 md:flex-row">
-        <div className="grid flex-9 gap-3.5 md:grid-cols-3 md:gap-5">
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-          <Technology />
-        </div>
+      <div className="mt-5 flex flex-col items-start gap-8 md:mt-10 lg:flex-row">
+        <Suspense
+          fallback={
+            <h2 className="text-text-muted w-full flex-7 py-4 text-center text-xl uppercase md:text-3xl lg:flex-9">
+              Loading...
+            </h2>
+          }
+        >
+          <AllStacks technologiesPromise={technologiesPromise} />
+        </Suspense>
 
         <SelectedStack />
       </div>

@@ -3,7 +3,7 @@ import LogoImage from "../assets/images/logo-text.png";
 const Footer = () => {
   return (
     <footer className="border-t-border-primary mb-12 border-t pt-8 md:pt-16">
-      <div className="container mx-auto px-5 md:px-0">
+      <div className="container mx-auto px-5">
         <div className="grid grid-cols-5 gap-10">
           <div className="col-span-5 flex flex-col gap-3 text-center md:col-span-2 md:text-left">
             <img
@@ -12,7 +12,7 @@ const Footer = () => {
               className="mx-auto h-8 w-fit md:mx-0 md:h-6"
             />
 
-            <p className="text-text-tertiary max-w-[384px] text-xs leading-[19.5px]">
+            <p className="text-text-tertiary mx-auto max-w-[384px] text-xs leading-[19.5px] md:mx-0">
               Curated tools, technologies, and resources for developers building
               modern software.
             </p>
@@ -45,12 +45,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="hidden flex-col gap-4 md:flex">
+          <div className="hidden space-y-4 md:block">
             <h4 className="text-text-primary text-xs font-bold">PRODUCT</h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="space-y-2.5">
               <li>
                 <a
-                  href="#"
+                  href="#home"
                   className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
                 >
                   Home
@@ -58,7 +58,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#technologies"
                   className="text-text-tertiary hover:text-text-primary text-xs transition-colors"
                 >
                   Technologies
@@ -75,9 +75,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="hidden flex-col gap-4 md:flex">
+          <div className="hidden space-y-4 md:block">
             <h4 className="text-text-primary text-xs font-bold">COMPANY</h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="space-y-2.5">
               <li>
                 <a
                   href="#"
@@ -105,9 +105,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="hidden flex-col gap-4 md:flex">
+          <div className="hidden space-y-4 md:block">
             <h4 className="text-text-primary text-xs font-bold">LEGAL</h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="space-y-2.5">
               <li>
                 <a
                   href="#"

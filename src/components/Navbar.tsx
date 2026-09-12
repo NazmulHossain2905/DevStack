@@ -3,8 +3,8 @@ import LogoImage from "../assets/images/logo-text.png";
 
 const Navbar = () => {
   return (
-    <nav className="border-border-primary sticky top-0 z-50 border-b bg-white px-5 md:px-0">
-      <div className="container mx-auto flex h-12 items-center justify-between md:h-20">
+    <nav className="border-border-primary sticky top-0 z-50 border-b bg-white">
+      <div className="container mx-auto flex h-12 items-center justify-between px-5 md:h-20">
         <IoMenu className="text-text-secondary cursor-pointer text-2xl md:hidden" />
 
         <img
@@ -16,7 +16,7 @@ const Navbar = () => {
         <ul className="hidden items-center gap-7 md:flex">
           <li>
             <a
-              href="#"
+              href="#home"
               className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
             >
               Home
@@ -24,7 +24,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="#technologies"
               className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
             >
               Technologies
