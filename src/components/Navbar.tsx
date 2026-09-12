@@ -43,16 +43,40 @@ const Navbar = () => {
 
   const [activeNav, setActiveNav] = useState<NavType>(currentHash);
 
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <nav className="border-border-primary sticky top-0 z-50 border-b bg-white">
-      <div className="container mx-auto flex h-12 items-center justify-between px-5 md:h-20">
-        <IoMenu className="text-text-secondary cursor-pointer text-2xl md:hidden" />
+      <div className="container mx-auto flex h-12 items-center justify-between px-4 md:h-20">
+        <button
+          className="text-text-secondary cursor-pointer text-2xl md:hidden"
+          onFocus={() => setIsVisible(true)}
+          onBlur={() => setIsVisible(false)}
+        >
+          <IoMenu className="text-text-secondary text-2xl" />
+        </button>
 
         <img
           src={LogoImage}
           alt="Logo"
           className="h-6 cursor-pointer md:h-auto"
         />
+
+        <ul
+          className={`absolute top-0 left-0 transition-transform ${isVisible ? "translate-x-0" : "-translate-x-full"} h-screen w-2/3 space-y-3 bg-white p-6 md:hidden`}
+        >
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                href={link.href}
+                onClick={() => setActiveNav(link.id)}
+                className={`${activeNav === link.id ? "text-primary bg-pink-100" : "text-text-secondary"} hover:text-primary block rounded-md bg-gray-50 p-2 px-3 text-sm font-medium transition-colors`}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
         <ul className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
